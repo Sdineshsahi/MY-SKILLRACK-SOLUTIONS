@@ -1,0 +1,30 @@
+int isv(char c){
+    c=tolower(c);
+    return(c=='a'||c=='e'||c=='i'||c=='o'||c=='u');
+}
+char* vowelEncryption(char *str)
+{
+    int l=strlen(str);
+    char *res=(char*)malloc((l*2)+1);
+    int i=0,k=0;
+    while(i<l){
+        if(isv(str[i])){
+            int c=0;
+            while(i<l&&isv(str[i])){
+                c++;
+                i++;
+            }
+            k+=sprintf(res+k,"%d",c);
+        }
+        else{
+            res[k++]=str[i++];
+        }
+    }
+    return res;
+}
+
+Input:  "heelloo"
+Output: "h2l2"
+
+Input:  "beautiful"
+Output: "b3t1f1l"
