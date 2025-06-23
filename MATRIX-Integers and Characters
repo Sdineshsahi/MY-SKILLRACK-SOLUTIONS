@@ -1,0 +1,36 @@
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int r=sc.nextInt();
+		int c=sc.nextInt();
+		String[][]mat=new String[r][c];
+		for(int i=0;i<r;i++){
+		    for(int j=0;j<c;j++){
+		        mat[i][j]=sc.next();
+		    }
+		}
+		for(int j=0;j<c;j++){
+		    int sum=0;
+		    if(Character.isDigit(mat[0][j].charAt(0))){
+		        sum+=Integer.parseInt(mat[0][j]);
+		        for(int i=1;i<r;i++){
+		            sum+=Integer.parseInt(mat[i][j]);
+		        }
+		    }
+		    if(sum>0)System.out.print(sum+" ");
+		}
+		for(int j=0;j<c;j++){
+		    String k="";
+		    int f=0;
+		    if(Character.isLetter(mat[0][j].charAt(0))){
+		        f=1;
+		        for(int i=r-1;i>=0;i--){
+		            k+=mat[i][j];
+		        }
+		    }
+		    if(f==1)System.out.print(k+" ");
+		}
+	}
+}
