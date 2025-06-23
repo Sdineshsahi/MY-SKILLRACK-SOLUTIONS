@@ -1,0 +1,16 @@
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        Set<Character>k=new HashSet<>();
+        for(char c:s.toCharArray()){
+            if(!k.contains(c)){
+                System.out.print(c);
+                k.add(c);
+            }
+        }
+
+	}
+}
