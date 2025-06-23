@@ -1,0 +1,50 @@
+import java.util.*;
+public class Hello {
+    public static void f(String s){
+        System.out.print(s);
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        String[]k=s.split("-");
+        int m=Integer.parseInt(k[1]);
+        switch(m){
+            case 1:
+                f("January");
+                break;
+            case 2:
+                f("Feb");
+                break;
+            case 3:
+                f("March");
+                break;
+            case 4:
+                f("April");
+                break;
+            case 5:
+                f("may");
+                break;
+            case 6:
+                f("June");
+                break;
+            case 7:
+                f("July");
+                break;
+            case 8:
+                f("August");
+                break;
+            case 9:
+                f("September");
+                break;
+            case 10:
+                f("October");
+                break;
+            case 11:
+                f("November");
+                break;
+            case 12:
+                f("December");
+                break;
+        }
+	}
+}
