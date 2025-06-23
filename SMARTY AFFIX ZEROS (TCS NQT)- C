@@ -1,0 +1,14 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int m,n;
+    scanf("%d %d",&m,&n);
+    char s[10];
+    sprintf(s,"%d",n);
+    int l=strlen(s);
+    for(int i=m;i<=n;i++){
+        printf("%0*d ",l,i);
+    }
+}
