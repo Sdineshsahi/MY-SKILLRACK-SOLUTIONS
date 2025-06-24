@@ -1,0 +1,27 @@
+A string S of length L is passed as the input. The program must rotate the string S by N position in
+forward direction and print the result as the output.
+
+The length L of the string S is from 3 to 100.
+0 <= N <= L
+
+Example Input/Output:
+Input:
+cricket
+2
+
+Output:
+etcrick
+
+CODE:
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	String s=sc.nextLine();
+	int n=sc.nextInt();
+	int l=s.length();
+	System.out.print(s.substring(l-n,l)+s.substring(0,l-n));
+
+	}
+}
