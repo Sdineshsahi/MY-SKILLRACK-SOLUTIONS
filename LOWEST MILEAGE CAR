@@ -1,0 +1,20 @@
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		float res=1000;
+		String rn="";
+		while(sc.hasNext()){
+		    String x=sc.next();
+		    String[]k=x.split("@");
+		    String name=k[0];
+		    float m=Float.parseFloat(k[1]);
+		    if(m<res){
+		        res=m;
+		        rn=name;
+		    }
+		}
+		System.out.print(rn);
+	}
+}
