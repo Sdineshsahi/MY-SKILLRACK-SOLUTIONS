@@ -1,0 +1,36 @@
+This code reads an input string containing numbers followed by letters (e.g., 3abc2xy) and prints each 
+letter group repeated according to the preceding number. It processes and outputs each segment on a new line.
+
+INPUT:
+5A10B
+OUTPUT:
+ABABABABAB
+BBBBBBBBBB
+
+CODE:
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        int l=s.length();
+        int k=0;
+        for(int i=0;i<l;i++){
+            if(Character.isLetter(s.charAt(i))){
+                int num=Integer.parseInt(s.substring(k,i));
+                String x=s.substring(i,l);
+                int xl=x.length();
+                while(num>0){
+                    for(int j=0;j<xl;j++){
+                        if(Character.isLetter(x.charAt(j))){
+                            System.out.print(x.charAt(j));
+                        }
+                    }
+                    num--;
+                }
+                k=i+1;
+                System.out.println();
+            }
+        }
+    }
+}
