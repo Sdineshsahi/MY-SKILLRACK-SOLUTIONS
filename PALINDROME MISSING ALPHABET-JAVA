@@ -1,0 +1,12 @@
+String S which is a palindrome is passed as the input. But just one alphabet A is missing in S. The
+program must print the missing alphabet A.
+Note: The FIRST alphabet of S will always be present.
+Input:
+malayaam
+Output:
+l
+Input:
+abcddcb
+Output:
+a
+CODE:
