@@ -1,0 +1,16 @@
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int res=0;
+        while(sc.hasNext()){
+            String s=sc.next();
+            String[]k=s.split(":");
+            int h=Integer.parseInt(k[0]);
+            int m=Integer.parseInt(k[1]);
+            if((h>10&&m>=0)||(h==10&&m>0))res++;
+        }
+        System.out.print(res);
+	}
+}
