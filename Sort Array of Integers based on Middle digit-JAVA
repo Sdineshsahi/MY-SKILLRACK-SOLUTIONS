@@ -1,0 +1,28 @@
+import java.util.*;
+public class Hello {
+    public static int getmid(int n){
+        String k=Integer.toString(n);
+        return k.charAt(k.length()/2)-'0';
+    }
+    public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		Integer[] arr=new Integer[n];
+		for(int i=0;i<n;i++){
+		    arr[i]=sc.nextInt();
+		}
+		Arrays.sort(arr,new Comparator<Integer>(){
+		    public int compare(Integer a,Integer b){
+		        int ma=getmid(a);
+		        int mb=getmid(b);
+		        if(ma!=mb)
+		            return Integer.compare(ma,mb);
+		        return Integer.compare(a,b);
+		    }
+		});
+		for(int k:arr){
+		    System.out.print(k+" ");
+		}
+
+	}
+}
