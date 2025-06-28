@@ -1,0 +1,23 @@
+struct Node* insertLinkedList(struct Node* x,struct Node* y,int k){
+    struct Node *a=x;
+    struct Node *b=y;
+    if(k==0){
+        while(b->next!=NULL){
+            b=b->next;
+        }
+        b->next=x;
+        return;
+    }
+    k--;
+    while(k>0&&a!=NULL){
+        a=a->next;
+        k--;
+    }
+    struct Node *temp=a->next;
+    a->next=y;
+    while(b->next!=NULL){
+        b=b->next;
+    }
+    b->next=temp;
+    return x;
+}
