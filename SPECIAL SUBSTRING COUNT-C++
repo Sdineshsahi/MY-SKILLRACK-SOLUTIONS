@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+bool isSame(string str) {
+    int size = strlen(str);
+    for(int i = 1; i < size; i++) {
+        if((str[i] == str[0]) || (size % 2 == 1 && str[i] != str[0] && i == size / 2)) 
+            continue;
+        return false;
+    }
+    return true;
+}
+
+int main() {
+    string str;
+    cin>>str;
+    int size = str.size();
+    int count = 0;
+    for(int i = 0; i < size; i++) {
+        for(int j = i+1; j <= size; j++) {
+            string sub = str.substr(i, j-i);
+            if(isSame(sub)) count++;
+        }
+    }
+    cout<<count;
+}
