@@ -1,0 +1,24 @@
+typedef struct BoundedArray{
+    int SIZE;
+    int *arr;
+}boundedArray;
+boundedArray *getXthDiagonal(int r,int c,int mat[r][c],int x){
+    boundedArray *res=(boundedArray*)malloc(sizeof(boundedArray));
+    res->arr=(int*)malloc(sizeof(int)*(r+c));
+    res->SIZE=0;
+    int a,b;
+    if(x<=r){
+        a=r-x;
+        b=0;
+    }
+    else{
+        a=0;
+        b=c-x;
+    }
+    while(a<r&&b<c){
+        res->arr[res->SIZE++]=mat[a][b];
+        a++;
+        b++;
+    }
+    return res;
+}
