@@ -1,0 +1,25 @@
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int m=sc.nextInt();
+	int n=sc.nextInt();
+	int[][]mat=new int[4][4];
+	int[][]tat=new int[4][4];
+	for(int i=0;i<4;i++){
+	    for(int j=0;j<4;j++){
+	        mat[i][j]=m;
+	        m+=n;
+	    }
+	}
+	for(int i=0;i<4;i++){
+	    for(int j=0;j<4;j++){
+	        tat[i][j]=mat[j][i];
+	        System.out.print(mat[i][j]*tat[i][j]+" ");
+	    }
+	    System.out.println();
+	}
+	
+	}
+}
