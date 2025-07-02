@@ -1,0 +1,26 @@
+#include <iostream>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    string s;
+    cin>>s;
+    int t;
+    cin>>t;
+    int fr[256]={0};
+    int po[256]={0};
+    int tot=0;
+    for(char ch:s){
+        fr[ch]++;
+        if(fr[ch]>t){
+            continue;
+        }
+        if(po[ch]==0)po[ch]=1;
+        else{
+            po[ch]*=2;
+        }
+        tot+=po[ch];
+    }
+    cout<<tot;
+}
