@@ -1,0 +1,43 @@
+Astriks &Squarebrackets pattern-JAVA
+
+Input/Output 1:
+Input: 
+3
+Output: 
+----[*]---- 
+--[[***]]-- 
+[[[*****]]]  
+Input/Output 2:
+Input: 
+4
+Output: 
+------[*]------ 
+----[[***]]---- 
+--[[[*****]]]--
+[[[[*******]]]]
+
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int hc=2*(n-1);
+		int ob=1;
+		int cb=1;
+		int ac=1;
+		for(int i=0;i<n;i++){
+		    for(int l=0;l<hc;l++)System.out.print('-');
+		    for(int k=0;k<ob;k++)System.out.print('[');
+		    for(int x=0;x<ac;x++)System.out.print('*');
+		    for(int y=0;y<cb;y++)System.out.print(']');
+		    for(int u=0;u<hc;u++)System.out.print('-');
+		    System.out.println();
+		    ac+=2;
+		    ob+=1;
+		    cb+=1;
+		    hc-=2;
+		}
+
+	}
+}
