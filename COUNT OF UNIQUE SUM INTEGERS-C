@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<stdlib.h>
+int dsum(unsigned long long int n){
+    int s=0;
+    while(n>0){
+        s+=n%10;
+        n/=10;
+    }
+    return s;
+}
+int main()
+{
+    int n,c[1001]={0},res=0;
+    unsigned long long int v;
+    scanf("%d",&n);
+    while(n--){
+        scanf("%llu",&v);
+        int k=dsum(v);
+        if(c[k]==0){
+            res++;
+        }
+        c[k]++;
+        
+    }
+    printf("%d",res);
+}
