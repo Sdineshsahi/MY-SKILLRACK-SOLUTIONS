@@ -1,0 +1,37 @@
+Task:Given a square matrix of size S, print the matrix in the format given in Example Input/Out section.
+
+Input:
+3
+11 12 13
+21 22 23
+31 32 33
+Output:
+11
+21 22 12
+31 32 33 23 13
+
+CODE:
+
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d",&n);
+    int mat[n][n];
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            scanf("%d",&mat[i][j]);
+        }
+    }
+    for(int i=0;i<n;i++){
+        for(int j=0;j<=i;j++){
+            printf("%d ",mat[i][j]);
+        }
+        for(int k=i-1;k>=0;k--){
+            printf("%d ",mat[k][i]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
