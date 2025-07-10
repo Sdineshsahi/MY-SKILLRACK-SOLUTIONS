@@ -1,0 +1,60 @@
+TASK:
+The program must accept three string values S1, S2 and S3. S1 will be printed as the first row of a matrix. 
+S2 and S3 will be printed vertically in the column where their first alphabets match with that of the alphabet in S1. 
+If both S2 and S3 have same first alphabet then, S2 will be considered over S3.
+INPUT:
+volcano
+lowlying
+orange
+
+OUTPUT:
+volcano
+*ro****
+*aw****
+*nl****
+*gy****
+*ei****
+**n****
+**g****
+
+CODE:
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    char a[101],b[101],c[101];
+    scanf("%s\n%s\n%s",a,b,c);
+    int x=strlen(a);
+    int y=strlen(b);
+    int z=strlen(c);
+    int r=y>z?y:z;
+    char mat[r][x];
+    memset(mat,'*',sizeof(mat));
+
+    for(int i=0;i<x;i++){
+        mat[0][i]=a[i];
+    }
+    for(int i=0;i<x;i++){
+        if(mat[0][i]==b[0]&&mat[1][i]=='*'){
+            for(int j=1;j<y;j++){
+                mat[j][i]=b[j];
+            }
+            break;
+        }
+    }
+    for(int i=0;i<x;i++){
+        if(mat[0][i]==c[0]&&mat[1][i]=='*'){
+            for(int j=1;j<z;j++){
+                mat[j][i]=c[j];
+            }
+            break;
+        }
+    }
+    for(int i=0;i<r;i++){
+        for(int j=0;j<x;j++){
+            printf("%c",mat[i][j]);
+        }
+        printf("\n");
+    }
+}
