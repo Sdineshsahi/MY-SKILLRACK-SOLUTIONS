@@ -1,0 +1,49 @@
+import java.util.*;
+
+public class Hello {
+    public static void printarr(int n, int[] arr) {
+        for (int i = 0; i < n; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int a = sc.nextInt();            
+        int[] a1 = new int[a];
+        for (int i = 0; i < a; i++) {
+            a1[i] = sc.nextInt();
+        }
+
+        int b = sc.nextInt();           
+        int[] a2 = new int[b];
+        for (int i = 0; i < b; i++) {
+            a2[i] = sc.nextInt();
+        }
+
+        if (a1[0] == a1[a - 1] && a2[0] == a2[b - 1]) {
+            if (a1[0] == a2[0]) {
+                printarr(a, a1);
+                printarr(b, a2);
+            } else {
+                if (a1[0] < a2[0]) {
+                    printarr(a, a1);
+                    printarr(b, a2);
+                } else {
+                    printarr(b, a2);
+                    printarr(a, a1);
+                }
+            }
+        } else {
+            if (a1[0] <= a1[a - 1] && a2[0] >= a2[b - 1]) {
+                printarr(a, a1);
+                printarr(b, a2);
+            } else {
+                printarr(b, a2);
+                printarr(a, a1);
+            }
+        }
+    }
+}
