@@ -11,8 +11,13 @@ In Kth level increasing series, the next term is formed by the sum of previous K
 EXAMPLE INPUT&OUTPUT:
 3 10
 >> 0 0 1 1 2 4 7 13 24 44 
+
 1 15
 >> 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+
+8 35
+>> 0 0 0 0 0 0 0 1 1 2 4 8 16 32 64 128 255 509 1016 2028 4048 8080 16128 32192 64256 128257 256005 510994
+1019960 2035872 4063664 8111200 16190208 32316160 64504063
 
 CODE:
 import java.util.*;
