@@ -1,0 +1,24 @@
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String s=sc.nextLine();
+		int k=sc.nextInt();
+		int count=0;
+		String[]arr=s.split(" ");
+		String[]res=new String[arr.length];
+		int m=0;
+		for(String i:arr){
+		    int l=i.length();
+		    int x=k%l;
+		    String sub=i.substring(l-x)+i.substring(0,l-x);
+		    res[m++]=sub;
+		    if(sub.equals(i))count++;
+		}
+		System.out.println(count);
+		for(String y:res){
+		    System.out.print(y+" ");
+		}
+	}
+}
