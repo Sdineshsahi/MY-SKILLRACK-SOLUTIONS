@@ -18,7 +18,7 @@ Output:
 34 35
 ---------------------------------------------------
 CODE IN C:
----------------
+---------------------------------------------------
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -45,7 +45,36 @@ int main()
         printf("\n");
     }
 }
-----------------------------------------------------------------
+-----------------
 CODE IN C++
-----------------------------------------------------
+----------------
+#include <iostream>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    int r,c;
+    cin>>r>>c;
+    int mat[r][c];
+    for(int i=0;i<r;i++){
+        for(int j=0;j<c;j++){
+            cin>>mat[i][j];
+        }
+    }
+    int r1,r2,c1,c2;
+    cin>>r1>>r2;
+    cin>>c1>>c2;
+    int minr=r1<r2?r1:r2;
+    int maxr=r1>r2?r1:r2;
+    int minc=c1<c2?c1:c2;
+    int maxc=c1>c2?c1:c2;
+    for(int i=minr;i<maxr-1;i++){
+        for(int j=minc;j<maxc-1;j++){
+            cout<<mat[i][j]<<" ";
+        }
+        cout<<"\n";
+    }
+
+}
 
