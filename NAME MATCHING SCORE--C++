@@ -1,0 +1,55 @@
+TASK:
+---------------------------------------------------------------------------------------------
+The program must accept two string values S1 and S2 representing the names of two persons as the input. The program must calculate the name matching score based on the following conditions. 
+If a character occurs in the same position in both names, then the score increments by 2. 
+If a character occurs in both names but in different positions, then the score increments by 1.
+Once a character in a position is used for the calculation, it cannot be considered again. 
+However, if the same character occurs in another position, then it can be used. 
+Finally, the program must print the name matching score for the given two persons as the output. 
+-----------------------------
+Example Input/Output 1:
+Input: 
+bhuvana 
+lavanya
+Output: 
+5 
+-----------------------------
+Explanation: There is only one character that occurs in the same position in both names and the characters v, a and n occur in both names but in different positions.
+So the total score is 2 + 1 + 1 + 1 = 5. 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+C++ Code:
+--------------------------------------------------------
+#include <iostream>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    char a[1001],b[1001];
+    cin>>a>>b;
+    int l1=strlen(a);
+    int l2=strlen(b);
+    int min=l1<l2?l1:l2;
+    int u1[1001]={0};
+    int u2[1001]={0};
+    int res=0;
+    for(int i=0;i<min;i++){
+        if(a[i]==b[i]){
+            res+=2;
+            u1[i]=u2[i]=1;
+        }
+    }
+    for(int i=0;i<l1;i++){
+        if(u1[i]==1)continue;
+        for(int j=0;j<l2;j++){
+            if(!u2[j]&&a[i]==b[j]){
+                res+=1;
+                u1[i]=1;
+                u2[j]=1;
+                break;
+            }
+        }
+    }
+    cout<<res;
+}
+---------------------------------------------------------------------------
