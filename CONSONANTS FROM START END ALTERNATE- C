@@ -1,3 +1,20 @@
+A string S is passed as the input to the program. The program must print the consonants from the start position and the consonants from the end position alternatively.
+No character at the same position in the string must be printed twice. 
+Boundary Condition(s): 1 <= Length of String S <= 1000 
+
+Example Input/Output 1:
+Input: 
+machine 
+Output: 
+mnch 
+Example Input/Output 2:
+Input: 
+environment 
+Output: 
+ntvnrmn
+
+CODE IN C:
+
 #include<stdio.h>
 #include<stdlib.h>
 int isv(char c){
