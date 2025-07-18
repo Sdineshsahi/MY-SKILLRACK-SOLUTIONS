@@ -1,0 +1,53 @@
+TASK:
+------
+The program must accept n integers and sort them based on the factors count. If two or more integers have the same factor count,
+they must be sorted in the ascending order of their occurrence.
+----------------------------------------------------
+INPUT/OUTPUT:
+Input
+5
+10 6 8 9 12
+Output
+12 6 8 10 9
+----------------------------------------------------
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int factcount(int n) {
+    int c = 0;
+    for(int i = 1; i <= n; i++) {
+        if(n % i == 0) c++;
+    }
+    return c;
+}
+
+bool cmp(int a, int b) {
+    int fa = factcount(a);
+    int fb = factcount(b);
+    if(fa != fb) {
+        return fa > fb;
+    } else {
+        return a > b;
+    }
+}
+
+int main() {
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+
+    for(int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    sort(arr.begin(), arr.end(), cmp);
+
+    for(int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+
+    return 0;
+}
+--------------------------------------------------------------
