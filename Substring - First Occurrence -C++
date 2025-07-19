@@ -1,0 +1,55 @@
+TASK: 
+-------------------------------
+The program must accept two string values S1 and S2 as the input. The program must find the positions of the first occurrence of all characters of S2 in S1.
+Then the program must print the characters in S1 from the minimum position to the maximum position among the positions obtained. 
+
+Note: All characters of S2 always occur at least once in S1.
+------------------------------------------------------------------------------
+Example Input/Output 1:
+Input: 
+corporate 
+oar
+Output: 
+orpora 
+---------------------------------------------------------------------------
+Explanation: 
+Here S1 = corporate, S2 = oar. 
+The position of the first occurrence of o in the string S1 is 2.
+The position of the first occurrence of a in the string S1 is 7.
+The position of the first occurrence of r in the string S1 is 3. 
+The characters from the 2nd position (minimum position) to the 7th position (maximum position) in S1 are o r p o r a. 
+Hence orpora is printed as the output.
+
+--------------------------------------------------------
+CODE IN C++:
+-----------------------------------------------------
+#include <iostream>
+#include<string.h>
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    char s1[1001],s2[101];
+    cin>>s1>>s2;
+    int a=strlen(s1);
+    int b=strlen(s2);
+    int min=a;
+    int max=0;
+    for(int i=0;i<b;i++){
+        for(int j=0;j<a;j++){
+            if(s2[i]==s1[j]){
+                if(j<min){
+                    min=j;
+                }
+                if(j>max){
+                    max=j;
+                }
+                break;
+            }
+        }
+        continue;
+    }
+    for(int i=min;i<=max;i++){
+        cout<<s1[i];
+    }
+}
