@@ -1,0 +1,64 @@
+TASK:
+-------------------------------------------------------------------------
+The program must accept an integer N (where N <= 9999) as the input. The program must print the integers from 1 to N based on the following conditions.
+The total number of holes in each single-digit integer must be greater than or equal to 1.
+- The total number of holes in each two-digit integer must be greater than or equal to 2.
+- The total number of holes in each three-digit integer must be greater than or equal to 3.
+- The total number of holes in each four-digit integer must be greater than or equal to 4.
+The number of holes in each digit from 0 to 9 is given below.
+
+0-1
+1-0
+2-0
+3-0
+4-1
+5-0
+6-1
+7-0
+8-2
+9-1
+-----------------------------------------------------------------------------------
+
+--------------------------------------
+JAVA CODE:
+--------------------------------------
+import java.util.*;
+class Main {
+    public static int holecount(int n){
+        int res=0;
+        while(n>0){
+            int i=n%10;
+            if(i==0||i==4||i==6||i==9)res+=1;
+            if(i==8)res+=8;
+            n/=10;
+        }
+        return res;
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        for(int i=1;i<=n;i++){
+            if(i<10){
+                if(holecount(i)>=1){
+                    System.out.print(i+" ");
+                }
+            }
+            if(i>10&&i<100){
+                if(holecount(i)>=2){
+                    System.out.print(i+" ");
+                }
+            }
+            if(i>100&&i<1000){
+                if(holecount(i)>=3){
+                    System.out.print(i+" ");
+                }
+            }
+            if(i>1000&&i<10000){
+                if(holecount(i)>=4){
+                    System.out.print(i+" ");
+                }
+            }
+            
+        }
+    }
+}
