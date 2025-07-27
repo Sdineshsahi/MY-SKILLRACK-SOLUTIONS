@@ -1,0 +1,38 @@
+Task:
+Given a number N and an integer X,the program must print "YES" if absolute value of N is the power of X.
+Else the program must print "NO";
+---------------------------------------------------------------------------------------------------
+INPUT & OUTPUT:
+32 2
+-->YES
+------------------
+28 4
+-->NO
+---------------------
+CODE IN C++:
+-----------
+// Online C++ compiler to run C++ program online
+#include <iostream>
+
+int main() {
+    long long n;
+    int x;
+    cin>>n>>x;
+    n=abs(n);
+    if(x==1){
+        if(n==1)cout<<"YES";
+        else cout<<"NO";
+        return 0;
+    }
+    long long val=1;
+    while(val<=n){
+        if(val==n){
+            cout<<"YES";
+            return 0;
+        }
+        val*=x;
+    }
+    cout<<"NO";
+
+    return 0;
+}
