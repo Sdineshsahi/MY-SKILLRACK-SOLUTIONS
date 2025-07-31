@@ -1,0 +1,26 @@
+TASK:COUNT OF INTEGERS-MULTIPLES/FACTORS
+
+
+
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int n=sc.nextInt();
+	int[]arr=new int[n];
+	for(int i=0;i<n;i++){
+	    arr[i]=sc.nextInt();
+	}
+	int res=0;
+	for(int i=0;i<n;i++){
+	    int f=0;
+	    for(int j=0;j<n;j++){
+	        if((arr[i]!=arr[j])&&((arr[i]%arr[j]==0)||(arr[j]%arr[i]==0)))f=1;
+	    }
+	    if(f==1)res++;
+	}
+	System.out.print(res);
+
+	}
+}
