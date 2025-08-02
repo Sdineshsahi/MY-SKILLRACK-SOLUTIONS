@@ -1,0 +1,49 @@
+TASK:
+This program creates a character matrix of size n² x n², initially filled with hyphens ('-'). 
+It then replaces the top-left to bottom-right diagonal of every n x n submatrix within it with asterisks ('*'), and finally prints the modified matrix.
+-------------------------------------------------------------------------------------------------------
+INPUT:
+3
+OUTPUT:
+* - - * - - * - - 
+- * - - * - - * - 
+- - * - - * - - * 
+* - - * - - * - - 
+- * - - * - - * - 
+- - * - - * - - * 
+* - - * - - * - - 
+- * - - * - - * - 
+- - * - - * - - * 
+------------------------------------------------------------------------
+C CODE:
+--------------------
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    int x=n*n;
+    char mat[x][x];
+    for(int i=0;i<x;i++){
+        for(int j=0;j<x;j++){
+            mat[i][j]= '-';
+        }
+    }
+    for(int k=0;k<x;k+=n){
+        for(int l=0;l<x;l+=n){
+            for(int i=0;i<n;i++){
+                int r=k+i;
+                int c=l+i;
+                if(r<x&&c<x)mat[r][c]='*';
+            }
+        }
+    }
+    for(int i=0;i<x;i++){
+        for(int j=0;j<x;j++){
+            printf("%c ",mat[i][j]);
+        }
+        printf("\n");
+    }
+}
