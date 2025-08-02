@@ -1,0 +1,27 @@
+TASK:
+------
+Write a function that takes an array of integers and an integer n (the size of the array) as input. The function must return:
+
+0 if the product of all integers in the array is zero.
+
+1 if the product is positive (greater than 0).
+
+-1 if the product is negative (less than 0).
+
+The array may contain both positive, negative, and zero values
+-------------------------------------------------------------
+CODE IN C:
+----------
+int getProductSign(int n, int arr[])
+{
+    int c=0;
+    for(int i=0;i<n;i++){
+        if(arr[i]==0)return 0;
+        else{
+            if(arr[i]<0)c++;
+        }
+    }
+    if(c%2==0)return 1;
+    else return -1;
+}
+---------------------------------------------------
