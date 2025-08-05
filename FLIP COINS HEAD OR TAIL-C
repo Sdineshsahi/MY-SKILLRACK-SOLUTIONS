@@ -1,0 +1,50 @@
+TASK:
+-----
+Hector is playing a game with a coin. The coin has two faces HEAD and TAIL He tosses the coin N times.
+The number of times the coin is flipped in each toss is passed as the input.
+After each toss, he uses the face obtained in the previous toss to start the next toss.
+The program also accepts a character F representing the initial face of the coin.
+Finally, the program must print the number of times he gets HEAD and the number of times he gets TAIL as the output.
+------------------------------------------------------------------------------------------------------------------------
+Example:
+-------
+Input
+5
+3 3 4 5 2
+H
+Output:
+3 2
+-------------------------------------------------
+CODE:
+--------
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    int arr[n];
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    char c;
+    scanf(" %c",&c);
+    int r1=0,r2=0;
+    for(int i=0;i<n;i++){
+        char res;
+        if(c=='H'){
+            if(arr[i]%2!=0)res='T';
+            else res=c;
+        }
+        if(c=='T'){
+            if(arr[i]%2!=0)res='H';
+            else res=c;
+        }
+        if(res=='H')r1++;
+        if(res=='T')r2++;
+        c=res;
+    }
+    printf("%d %d",r1,r2);
+}
+----------------------------------------------------------------
