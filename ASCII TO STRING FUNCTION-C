@@ -1,0 +1,16 @@
+TASK:
+Implement a function that accepts an array of integers representing the ASCII Values of characters.
+The function must return a string corresponding to the ASCII Values.
+----------------------------------------------------------------------------
+CODE IN C:
+-------------------------------------------------------------------------
+char* asciiToString(int SIZE, int *arr)
+{
+    char *res=(char*)malloc(SIZE*sizeof(char));
+    int k=0;
+    for(int i=0;i<SIZE;i++){
+        res[k++]=(char)arr[i];
+    }
+    return res;
+}
+-------------------------------------------
