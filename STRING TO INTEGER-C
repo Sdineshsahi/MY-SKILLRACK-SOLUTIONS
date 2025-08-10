@@ -1,0 +1,49 @@
+TASK:
+The Program must accept a STRING containing the manes of numbers from 0 to 9 the 
+function should retunr the values of digits together for the corresponding string.
+-----------------------------------------------------------------------------------
+INPUT&OUTPUT:
+INPUT:
+onesixeightthree
+OUTPUT:
+1683
+------------------------------------
+CODE IN C:
+---------------------------------------
+int stringToInteger(char *str)
+{
+    int l=strlen(str);
+    int i=0;
+    char res[101];
+    int k=0;
+    while(i<l){
+        char c1[6]={},c2[6]={},c3[6]={};
+        int x=0,y=0,z=0;
+        if(i+3<=l){
+            strncpy(c1,str+i,3);
+        }
+        if(i+4<=l){
+            strncpy(c2,str+i,4);
+        }
+        if(i+5<=l){
+            strncpy(c3,str+i,5);
+        }
+    
+        if(strcmp(c1,"one")==0){res[k++]='1';i+=3;continue;}
+        if(strcmp(c1,"two")==0){res[k++]='2';i+=3;continue;}
+        if(strcmp(c1,"six")==0){res[k++]='6';i+=3;continue;}
+        
+        if(strcmp(c2,"four")==0){res[k++]='4';i+=4;continue;}
+        if(strcmp(c2,"five")==0){res[k++]='5';i+=4;continue;}
+        if(strcmp(c2,"nine")==0){res[k++]='9';i+=4;continue;}
+        if(strcmp(c2,"zero")==0){res[k++]='0';i+=4;continue;}
+        
+        
+        if(strcmp(c3,"three")==0){res[k++]='3';i+=5;continue;}
+        if(strcmp(c3,"eight")==0){res[k++]='8';i+=5;continue;}
+        if(strcmp(c3,"seven")==0){res[k++]='7';i+=5;continue;}
+        break;
+    }
+    return atoi(res);
+}
+----------------------------------------------------------------
