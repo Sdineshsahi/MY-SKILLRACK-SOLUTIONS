@@ -1,0 +1,23 @@
+TASK:
+Accept a String S and return the ABBREVIATION OF THAT STRING.
+-------------------------------------------------------
+CODE IN C:
+-------------------------------------------------------
+INPUT&OUTPUT:
+INPUT:
+Automated teller machine
+OUTPUT:
+ATM
+------------------------------------------------------
+char* getAbbreviation(char *s){
+    int l=strlen(s);
+    char* res=(char*)malloc(l*sizeof(char));
+    int k=0;
+    char* w=strtok(s," ");
+    while(w!=NULL){
+        res[k++]=toupper(w[0]);
+        w=strtok(NULL," ");
+    }
+    return res;
+}
+-----------------------------------------------------
