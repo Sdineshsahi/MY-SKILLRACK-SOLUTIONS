@@ -1,0 +1,61 @@
+TASK:
+find the longest common prefix among multiple words (case-insensitive).
+Reads input words, identifies the shortest word, and compares characters to output the common starting portion.
+-----------------------------------------------------------------------------------------------------------
+
+INPUT/OUTPUT:
+----------------
+ramnath Ramu Ramarao
+Ram
+-----------------------------
+CODE IN C:
+--------------------------------
+#include <stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<ctype.h>
+int main() {
+    int n;
+    scanf("%d",&n);
+    char s[101],w[n][101];
+    scanf(" %[^\n]",s);
+    int k=0;
+    char* tok=strtok(s," ");
+    while(tok!=NULL){
+        strcpy(w[k++],tok);
+        tok=strtok(NULL," ");
+    }
+    int min=strlen(w[0]);
+    char ref[101];
+    strcpy(ref,w[0]);
+    for(int i=1;i<k;i++){
+        if(strlen(w[i])<min){
+            min=strlen(w[i]);
+            strcpy(ref,w[i]);
+        }
+    }
+    char res[101];
+    int x=0;
+    for(int i=0;i<min;i++){
+        int m=1;
+        char c=tolower(ref[i]);
+        for(int j=0;j<k;j++){
+        if(tolower(w[j][i])!=c){
+           m=0;
+           break;
+        }
+        }
+        if(m){
+            res[x++]=ref[i];
+        }
+        else{
+            break;
+        }
+        }
+        
+    res[x]='\0';
+    printf("%s",res);
+        
+
+    return 0;
+}
