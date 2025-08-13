@@ -1,0 +1,27 @@
+BINARY FIBONACCI PATTERN
+---------------------------------------------------------------------------------------
+The program must accept an integer N and print (N*2)-1 lines of binary represntation.
+--------------------------------------------------------------------------------------
+CODE IN C:
+---------------------------------------
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    char res[n*2][1001];
+    strcpy(res[0],"0");
+    strcpy(res[1],"1");
+    for(int i=2;i<n;i++){
+        strcpy(res[i],res[i-2]);
+        strcat(res[i],res[i-1]);
+    }
+    for(int i=0;i<n;i++){
+        printf("%s\n",res[i]);
+    }
+    for(int i=n-2;i>=0;i--){
+        printf("%s\n",res[i]);
+    }
+}
+----------------------------------------------------------------------
